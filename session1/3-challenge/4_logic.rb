@@ -10,12 +10,12 @@
 # grade(15, true)   # => "B"
 
 def grade(num_books, reads_books)
-	return "D" if 0 <= num_books < 10 && reads_books == false
-	return "C" if 10 <= num_books <= 20 && reads_books == false || num_books < 10 && reads_books == true
-	return "B" if num_books > 20 && reads_books == false || 10 <= num_books <= 20 && reads_books == true
+	return "D" if (num_books < 10) && reads_books == false
+	return "C" if ((num_books >= 10) && num_books <= 20 && reads_books == false) || (num_books < 10 && reads_books == true)
+	return "B" if (num_books > 20 && reads_books == false) || (num_books >= 10 && num_books <= 20 && reads_books == true)
 	return "A" if num_books > 20 && reads_books == true
 end
 
-# print grade(15, true)
-# print grade(4,  true) 
-# print grade(4,  false)
+print grade(15, true)
+print grade(4,  true) 
+print grade(4,  false)
